@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Cards.Persistance
 {
-    public interface IPersistanceService
+    public interface IPersistenceService
     {
         List<CardInfo> GetHand();
         CardInfo GetCardPreview();

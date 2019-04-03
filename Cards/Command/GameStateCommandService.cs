@@ -7,9 +7,9 @@ namespace Cards.Command
 {
     public class GameStateCommandService : IGameStateCommandService
     {
-        private readonly IPersistanceService PersistanceService;
+        private readonly IPersistenceService PersistanceService;
 
-        public GameStateCommandService(IPersistanceService persistanceService)
+        public GameStateCommandService(IPersistenceService persistanceService)
         {
             PersistanceService = persistanceService;
         }

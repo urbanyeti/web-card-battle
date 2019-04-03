@@ -8,17 +8,17 @@ namespace Cards.Query
 {
     public class GameStateQueryService : IGameStateQueryService
     {
-        private readonly IPersistanceService PersistanceService;
+        private readonly IPersistenceService PersistenceService;
 
-        public GameStateQueryService(IPersistanceService persistanceService)
+        public GameStateQueryService(IPersistenceService persistanceService)
         {
-            PersistanceService = persistanceService;
+            PersistenceService = persistanceService;
         }
 
         public QueryResponse<IGameEvent> GetNextGameEvent(Guid gameStateId)
         {
             var response = new QueryResponse<IGameEvent>();
-            IGameState gameState = PersistanceService.GetGameState(gameStateId);
+            IGameState gameState = PersistenceService.GetGameState(gameStateId);
 
             IGameEvent gameEvent = gameState.GameEvents?.ElementAtOrDefault(0);
             if (gameEvent != null)

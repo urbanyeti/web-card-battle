@@ -8,22 +8,22 @@ namespace Cards.Query
 {
     public class CardQueryService : ICardQueryService
     {
-        private readonly IPersistanceService PersistanceService;
+        private readonly IPersistenceService PersistenceService;
 
-        public CardQueryService(IPersistanceService persistanceService)
+        public CardQueryService(IPersistenceService persistanceService)
         {
-            PersistanceService = persistanceService;
+            PersistenceService = persistanceService;
         }
 
         public List<CardInfo> GetHand()
         {
-            List<CardInfo> hand = PersistanceService.GetHand();
+            List<CardInfo> hand = PersistenceService.GetHand();
             return hand;
         }
 
         public CardInfo GetTargetPreview(Guid cardId, Guid targetId)
         {
-            CardInfo preview = PersistanceService.GetCardPreview();
+            CardInfo preview = PersistenceService.GetCardPreview();
             return preview;
         }
     }
